@@ -1,0 +1,20 @@
+# Copyright Abel Alexander John ;)
+#
+
+#The naming conventions used in Hyperledger Fabric 1.4 are not allowed in compose version 3 
+version: '2'
+
+services:
+  #Couchdb for holding offchain data
+  #
+  couchdb1:
+    container_name: couchdb1
+    image: hyperledger/fabric-couchdb
+    restart: always
+    network_mode: "host"
+    environment:
+      - COUCHDB_USER=uvionics
+      - COUCHDB_PASSWORD=uvionics123
+
+    ports:
+      - "8984:5984"
