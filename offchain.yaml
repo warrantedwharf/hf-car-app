@@ -7,14 +7,11 @@ version: '2'
 services:
   #Couchdb for holding offchain data
   #
-  couchdb1:
-    container_name: couchdb1
+  offchaindb:
+    container_name: offchaindb
     image: hyperledger/fabric-couchdb
     restart: always
     network_mode: "host"
-    environment:
-      - COUCHDB_USER=uvionics
-      - COUCHDB_PASSWORD=uvionics123
 
     ports:
-      - "8984:5984"
+      - "5990:5985"
